@@ -1,0 +1,205 @@
+.topbar {
+    display: flex;
+    justify-content: center;
+    background-color: #006633;
+    color: white;
+    padding: 10px;
+    background: linear-gradient(to bottom,#014724,#006633);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+}
+
+.header-title {
+    font-size: 50px;
+    font-family: 'Instrument Serif', monospace;
+    text-align: center;
+    padding-left: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    flex-wrap: nowrap;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #F2F2F2;
+    color: #151313;
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/golfballs.jpeg");
+    background-size: 100%;
+    background-attachment: fixed;
+    line-height: 1;
+}
+
+
+h1 {
+    margin: 40px;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+h3 {
+    margin-top: 0px;
+    padding: 5px;
+}
+
+h4, p {
+    padding: 5px;
+    font-size: 15px;
+}
+
+.info-section {
+    margin: 20px;
+    padding: 20px;
+    margin-left: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    box-sizing: border-box;
+    
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+}
+
+li {
+    margin: 10px;
+    margin-left: 0px;
+    font-weight: 600;
+}
+
+dl {
+    margin: 0px;
+    padding-bottom: 17px;
+}
+
+dd {
+    margin: 7px;
+    margin-left: 0px;
+    font-weight: 300;
+}
+
+.player-name{
+    font-size: 20px;
+    text-decoration: underline;
+    padding-bottom: 10px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+}
+
+
+.body-nav-button {
+    font-size: 25px;
+    text-align: left;
+    display: inline-block;
+    padding: 8px;
+    background-color: #006633;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    box-shadow: var(--box-shadow-button);
+}
+
+.body-nav-button:hover {
+    background-color: #33A1DE;
+}
+
+.body-nav-button:active {
+    transform: scale(0.95);
+}
+
+.body-nav {
+    
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: justify;
+    margin-right: 50px;
+    margin-left: 40px;
+    white-space: nowrap;
+    box-shadow: var(--box-shadow-button);
+}
+
+.header-nav {
+    font-size: 17px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.header-nav-container {
+    margin: 10px;
+    
+}
+
+.header-buttons{
+    margin-left: auto;
+    margin-top: auto;
+    padding-bottom: 10px;
+}
+
+.swing-videos{
+    height: 100px;
+}
+
+a {
+    color: #151313;
+    text-decoration: none;
+}
+
+.instructor-pic {
+    width: 40px;
+    height: 40px;
+    padding: 0px 20px;
+    border-radius: 50%;
+    margin-right: -10px;
+}
+
+.price {
+    display: inline-block;
+    padding-right: 10px;
+    margin: 0px;
+    color: var(--color-grey);
+
+}
+
+.request {
+    margin: 0px;
+    right: 0px;
+    text-decoration: none;
+    color:white;
+    background-color: var(--color-grey);
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+svg.icon {
+  display: inline;
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: top;
+  fill: currentColor;
+  padding: 0px 5px;
+  padding-bottom: -3px;
+  right: auto;
+}

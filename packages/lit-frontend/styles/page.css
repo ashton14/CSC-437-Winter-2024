@@ -102,6 +102,28 @@ li {
     color: #151313;
 }
 
+.instructor-box{
+    margin: 20px;
+    padding: 20px;
+    width: 230px;
+    background-color: white;
+    border-radius: 8px;
+    display: inline;
+    text-align: justify;
+    margin-right: 50px;
+    margin-left: 40px;
+    white-space: nowrap;
+    box-shadow: var(--box-shadow-button);
+}
+
+.instructor-container {
+        display: flex;
+    }
+
+.personal-info{
+    display: block;
+}
+
 dl {
     margin: 0px;
     padding-bottom: 17px;
@@ -145,7 +167,6 @@ dd {
 }
 
 .body-nav {
-    
     margin: 20px;
     padding: 20px;
     background-color: white;
@@ -192,7 +213,7 @@ a {
     padding: 0px 20px;
     border-radius: 50%;
     margin-right: -10px;
-}
+    }
 
 .price {
     display: inline-block;
@@ -220,5 +241,28 @@ svg.icon {
   fill: currentColor;
   padding: 0px 5px;
   padding-bottom: -3px;
+  right: auto;
+}
+
+svg.icon-star{
+  display: inline;
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: top;
+  fill: currentColor;
+  margin-left: -1px;
+  margin-right: -4px;
+  margin-top: 3px;
+  right: auto;
+}
+
+svg.icon-black-star{
+  display: inline;
+  height: 2.5em;
+  width: 2.5em;
+  vertical-align: top;
+  fill: currentColor;
+  margin-left: -10px;
+  margin-right: -10px;
   right: auto;
 }

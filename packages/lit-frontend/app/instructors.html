@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/styles/tokens.css" />
     <script type="module" src="./drop-down.ts"></script>
     <script type="module" src="./toggle-switch.ts"></script>
+    <script type="module" src="./instructor-card.ts"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -47,59 +48,53 @@
 
 <body>
     <img class="background-image" src="../images/golfballs.jpeg" alt="Background Image">
-    <ul>
-        <li>
-            <span class="body-nav">
-                <p class="player-name">
-                    <a href="instructor.html">Bob Johnson</a>
-                    <a href="instructor.html">
-                        <img class="instructor-pic" src="/images/swing1.jpg" alt="profile picture">
-                    </a>
-                </p>
-                <dl>
-                    <dd>5 years in the PGA</dd>
-                    <dd>15 years of instructing</dd>
-                    <dd>-6 handicap</dd>
-                </dl>
-                <p class="price"><i>$3.99</i></p>
-                <a class="request">Request</a>
-            </span>
-        </li>
-        <li>
-            <span class="body-nav">
-                <p class="player-name">
-                    <a href="instructor.html">James Miller</a>
-                    <a href="instructor.html">
-                        <img class="instructor-pic" src="/images/swing2.jpg" alt="profile picture">
-                    </a>
-                </p>
-                <dl>
-                    <dd>8 years in the PGA</dd>
-                    <dd>9 years of instructing</dd>
-                    <dd>-9 handicap</dd>
-                </dl>
-                <p class="price"><i>$5.99</i></p>
-                <a class="request">Request</a>
-            </span>
-        </li>
-        <li>
-            <span class="body-nav">
-                <p class="player-name">
-                    <a href="instructor.html">Manny Jefferson</a>
-                    <a href="instructor.html">
-                        <img class="instructor-pic" src="/images/swing3.jpg" alt="profile picture">
-                    </a>
-                </p>
-                <dl>
-                    <dd>4 years in the PGA</dd>
-                    <dd>1 years of instructing</dd>
-                    <dd>-3 handicap</dd>
-                </dl>
-                <p class="price"><i>$2.99</i></p>
-                <a class="request">Request</a>
-            </span>
-        </li>
-    </ul>
+    <div class="instructor-container">
+
+        <instructor-card>
+            <a slot="instructor-name" href="instructor.html">Bob Johnson</a>
+            <a slot="instructor-image" href="instructor.html">
+                <img class="instructor-pic" src="/images/swing1.jpg" alt="profile picture">
+            </a>
+            <dd slot="years-pro">5 years in the PGA</dd>
+            <dd slot="years-instructing">15 years of instructing</dd>
+            <dd slot="handicap">-6 handicap</dd>
+            <p slot="price"><i>$3.99</i></p>
+        </instructor-card>
+
+        <instructor-card>
+            <a slot="instructor-name" href="instructor.html">James Miller</a>
+            <a slot="instructor-image" href="instructor.html">
+                <img class="instructor-pic" src="/images/swing2.jpg" alt="profile picture">
+            </a>
+            <dd slot="years-pro">8 years in the PGA</dd>
+            <dd slot="years-instructing">9 years of instructing</dd>
+            <dd slot="handicap">-9 handicap</dd>
+            <p slot="price"><i>$5.99</i></p>
+        </instructor-card>
+
+        <instructor-card>
+            <a slot="instructor-name" href="instructor.html">Manny Jefferson</a>
+            <a slot="instructor-image" href="instructor.html">
+                <img class="instructor-pic" src="/images/swing3.jpg" alt="profile picture">
+            </a>
+            <dd slot="years-pro">4 years in the PGA</dd>
+            <dd slot="years-instructing">1 years of instructing</dd>
+            <dd slot="handicap">-3 handicap</dd>
+            <p slot="price"><i>$2.99</i></p>
+        </instructor-card>
+
+        <instructor-card>
+            <a slot="instructor-name" href="instructor.html">Chris Middleton</a>
+            <a slot="instructor-image" href="instructor.html">
+                <img class="instructor-pic" src="/images/swing3.jpg" alt="profile picture">
+            </a>
+            <dd slot="years-pro">7 years in the PGA</dd>
+            <dd slot="years-instructing">7 years of instructing</dd>
+            <dd slot="handicap">-8 handicap</dd>
+            <p slot="price"><i>$6.19</i></p>
+        </instructor-card>
+
+    </div>
 </body>
 
 </html>

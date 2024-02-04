@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
+    <script type="module" src="./drop-down.ts"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,10 +18,27 @@
 <header class="topbar">
     <span class="header-title">Caddy Coaches</span>
     <span class="header-buttons">
-        <span class="header-nav-container"><a class="header-nav" href="index.html">Sign In</a></span>
         <span class="header-nav-container"><a class="header-nav" href="index.html">Home</a></span>
         <span class="header-nav-container"><a class="header-nav" href="index.html">About</a></span>
     </span>
+    <nav class="menu-bar">
+        <drop-down>
+            <img class="instructor-pic" src="/images/swing1.jpg" alt="profile picture">
+            <ul class="menu" slot="menu">
+                <li>Sign in</li>
+                <li>Sign out</li>
+                <li>
+                    <hr />
+                </li>
+                <li>Edit Profile</li>
+                <li>
+                    <hr />
+                </li>
+                <li>Delete Account</li>
+                <li>Close</li>
+            </ul>
+        </drop-down>
+    </nav>
 </header>
 <h1>Find an Instructor</h1>
 

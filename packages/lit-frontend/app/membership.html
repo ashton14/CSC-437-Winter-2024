@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <script type="module" src="./drop-down.ts"></script>
+    <script type="module" src="./toggle-switch.ts"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -32,10 +33,12 @@
                 </li>
                 <li>Edit Profile</li>
                 <li>
+                    <toggle-switch>Theme</toggle-switch>
+                </li>
+                <li>
                     <hr />
                 </li>
-                <li>Delete Account</li>
-                <li>Close</li>
+                <li style="color: red;">Delete Account</li>
             </ul>
         </drop-down>
     </nav>
@@ -43,6 +46,7 @@
 <h1>Select a Membership</h1>
 
 <body>
+    <img class="background-image" src="../images/golfballs.jpeg" alt="Background Image">
     <ul>
         <li>
             <span class="body-nav">

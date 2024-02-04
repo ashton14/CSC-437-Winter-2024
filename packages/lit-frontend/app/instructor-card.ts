@@ -42,7 +42,7 @@ class InstructorCardElement extends LitElement {
     static styles = css`
     :host{
         display: flex;
-         flex-grow: 1;
+        flex-grow: 1;
     }
     .instructor-box{
         margin: 20px;

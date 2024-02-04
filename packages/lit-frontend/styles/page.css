@@ -43,12 +43,12 @@ body {
 }
 
 .background-image {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center center;
-            z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: -1;
 }
 
 
@@ -63,7 +63,7 @@ h3 {
     padding: 5px;
 }
 
-h4, p {
+h4 {
     padding: 5px;
     font-size: 15px;
 }
@@ -80,11 +80,11 @@ h4, p {
     
 }
 
-section{
+.swing-video-container{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 ul {
@@ -102,19 +102,6 @@ li {
     color: #151313;
 }
 
-.instructor-box{
-    margin: 20px;
-    padding: 20px;
-    width: 230px;
-    background-color: white;
-    border-radius: 8px;
-    display: inline;
-    text-align: justify;
-    margin-right: 50px;
-    margin-left: 40px;
-    white-space: nowrap;
-    box-shadow: var(--box-shadow-button);
-}
 
 .instructor-container {
         display: flex;
@@ -198,9 +185,6 @@ dd {
     padding-bottom: 10px;
 }
 
-.swing-videos{
-    height: 100px;
-}
 
 a {
     color: #151313;
@@ -215,24 +199,6 @@ a {
     margin-right: -10px;
     }
 
-.price {
-    display: inline-block;
-    padding-right: 10px;
-    margin: 0px;
-    color: var(--color-grey);
-
-}
-
-.request {
-    margin: 0px;
-    right: 0px;
-    text-decoration: none;
-    color:white;
-    background-color: var(--color-grey);
-    padding: 3px 5px;
-    border-radius: 5px;
-}
-
 svg.icon {
   display: inline;
   height: 1.5em;
@@ -241,28 +207,5 @@ svg.icon {
   fill: currentColor;
   padding: 0px 5px;
   padding-bottom: -3px;
-  right: auto;
-}
-
-svg.icon-star{
-  display: inline;
-  height: 1.5em;
-  width: 1.5em;
-  vertical-align: top;
-  fill: currentColor;
-  margin-left: -1px;
-  margin-right: -4px;
-  margin-top: 3px;
-  right: auto;
-}
-
-svg.icon-black-star{
-  display: inline;
-  height: 2.5em;
-  width: 2.5em;
-  vertical-align: top;
-  fill: currentColor;
-  margin-left: -10px;
-  margin-right: -10px;
   right: auto;
 }

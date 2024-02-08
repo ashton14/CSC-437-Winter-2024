@@ -12,6 +12,7 @@
     <script type="module" src="./drop-down.ts"></script>
     <script type="module" src="./toggle-switch.ts"></script>
     <script type="module" src="./swing-video-card.ts"></script>
+    <script type="module" src="./swing-video-container.ts"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -49,36 +50,73 @@
 
 <body>
     <img class="background-image" src="../images/golfballs.jpeg" alt="Background Image">
-    <div class="swing-video-container">
-        <swing-video-card>
-            <h3 slot="club">Driver</h3>
-            <h4 slot="date">10-08-2017</h4>
-            <img slot="swing-video" src="/images/swing1.jpg" alt="Video 1">
-            <h4 slot="feedback">Feedback</h4>
-            <p slot="feedback-text"><i>Bob Johnson </i>: Move your feet closer together</p>
-        </swing-video-card>
-
-        <swing-video-card>
-            <h3 slot="club">3 Wood</h3>
-            <h4 slot="date">4-16-2020</h4>
-            <img slot="swing-video" src="/images/swing2.jpg" alt="Video 2">
-            <p slot="feedback-text"><i>James Miller </i>: Keep your head still</p>
-        </swing-video-card>
-
-        <swing-video-card>
-            <h3 slot="club">7 Iron</h3>
-            <h4 slot="date">6-21-2019</h4>
-            <img slot="swing-video" src="/images/swing3.jpg" alt="Video 3">
-            <p slot="feedback-text"><i>Chris Middleton </i>: Keep your left arm straight</p>
-        </swing-video-card>
-
-        <swing-video-card>
-            <h3 slot="club">Sand Wedge</h3>
-            <h4 slot="date">5-11-2023</h4>
-            <img slot="swing-video" src="/images/swing4.jpg" alt="Video 3">
-            <p slot="feedback-text"><i>Manny Jefferson </i>: Lock your wrists</p>
-        </swing-video-card>
-    </div>
+    <swing-video-container id="SwingVideoContainer">
+    </swing-video-container>
 </body>
+
+<script>
+    const swingVideoContainer = document.getElementById('SwingVideoContainer');
+    const swingVideoCards = [
+        {
+            club: 'Driver',
+            date: '10-08-2023',
+            imageSrc: '/images/swing1.jpg',
+            feedbackTitle: 'Feedback',
+            feedbackText: '<i>Bob Johnson </i>: Move your feet closer together',
+        },
+        {
+            club: '3 Wood',
+            date: '4-16-2020',
+            imageSrc: '/images/swing2.jpg',
+            feedbackText: '<i>James Miller </i>: Keep your head still',
+        },
+        {
+            club: '7 Iron',
+            date: '3-18-2019',
+            imageSrc: '/images/swing3.jpg',
+            feedbackText: '<i>Chris Middleton </i>: Lock out your left arm',
+        },
+        {
+            club: 'Sand Wedge',
+            date: '7-17-2015',
+            imageSrc: '/images/swing4.jpg',
+            feedbackText: '<i><a href="instructors.html" class="get-feedback">[Get Feedback]</a></i>',
+        },
+    ];
+
+    swingVideoCards.forEach((card) => {
+        const swingVideoCard = document.createElement('swing-video-card');
+
+        const clubHeader = document.createElement('h3');
+        clubHeader.slot = 'club';
+        clubHeader.textContent = card.club;
+        swingVideoCard.appendChild(clubHeader);
+
+        const dateHeader = document.createElement('h4');
+        dateHeader.slot = 'date';
+        dateHeader.textContent = card.date;
+        swingVideoCard.appendChild(dateHeader);
+
+        const imgElement = document.createElement('img');
+        imgElement.slot = 'swing-video';
+        imgElement.src = card.imageSrc;
+        imgElement.alt = 'Video';
+        swingVideoCard.appendChild(imgElement);
+
+        const feedbackTitle = document.createElement('h4');
+        feedbackTitle.slot = 'feedback';
+        feedbackTitle.textContent = card.feedbackTitle;
+        swingVideoCard.appendChild(feedbackTitle);
+
+
+        const feedbackText = document.createElement('p');
+        feedbackText.slot = 'feedback-text';
+        feedbackText.innerHTML = card.feedbackText;
+        swingVideoCard.appendChild(feedbackText);
+
+
+        swingVideoContainer.appendChild(swingVideoCard);
+    });
+</script>
 
 </html>

@@ -110,18 +110,18 @@ export class UserProfileEditElement extends ViewProfileElement {
     return html`<form @submit=${this._handleSubmit} class="edit-form">
         <h1>Edit Profile</h1>
         <label for="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="New name..." required>
+          <input type="text" id="name" name="name" placeholder="New name..." >
 
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="New email..." required>
+          <input type="email" id="email" name="email" placeholder="New email..." >
 
           <label for="birthday">Birthday:</label>
-          <input type="date" id="birthday" name="birthday" placeholder="New birthday..." required>
+          <input type="date" id="birthday" name="birthday" placeholder="New birthday..." >
 
           <label for="handicap">Handicap:</label>
-          <input type="number" id="handicap" name="handicap" placeholder="New handicap..." required>
+          <input type="number" id="handicap" name="handicap" placeholder="New handicap..." >
 
-        <button type="submit">Submit</button>
+        <button type="submit">Save</button>
     </form> `;
   }
 
@@ -141,7 +141,12 @@ export class UserProfileEditElement extends ViewProfileElement {
   input{
     display: block;
     margin-bottom: 10px;
-  }`];
+    margin-top: 3px;
+  }
+  h1{
+    margin: 5px 0px;
+  }
+  `];
 
    _handleSubmit(ev: Event) {
     ev.preventDefault(); // prevent browser from submitting form data itself
@@ -149,12 +154,7 @@ export class UserProfileEditElement extends ViewProfileElement {
     const target = ev.target as HTMLFormElement;
     const formdata = new FormData(target);
     const entries = Array.from(formdata.entries())
-      .map(([k, v]) => (v === "" ? [k] : [k, v]))
-      .map(([k, v]) =>
-        k === "airports"
-          ? [k, (v as string).split(",").map((s) => s.trim())]
-          : [k, v]
-      );
+      .map(([k, v]) => (v === "" ? [k] : [k, v]));
     const json = Object.fromEntries(entries);
 
     this._putData(json);
@@ -171,7 +171,10 @@ export class UserProfileEditElement extends ViewProfileElement {
         else return null;
       })
       .then((json: unknown) => {
-        if (json) this.profile = json as Profile;
+        if (json) {
+          this.profile = json as Profile;
+          this.requestUpdate();
+        }
       })
       .catch((err) =>
         console.log("Failed to PUT form data", err)

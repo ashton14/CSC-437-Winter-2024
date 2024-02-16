@@ -115,6 +115,7 @@ dd {
     margin: 7px;
     margin-left: 0px;
     font-weight: 300;
+    margin-bottom: 0;
 }
 
 .player-name{
@@ -207,4 +208,26 @@ svg.icon {
 
 .get-feedback{
     text-decoration: underline;
+}
+
+.purchase {
+        display: inline-block;
+        margin-top: 8px;
+        margin-left: 74px;
+        text-decoration: none;
+        color:white;
+        background-color: var(--color-grey);
+        padding: 3px 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border-width: 1px;
+        border: solid;
+        border-color: white;
+}
+
+.purchase:hover{
+    background-color: white;
+    color: var(--color-grey);
+    border-color: var(--color-grey);
 }

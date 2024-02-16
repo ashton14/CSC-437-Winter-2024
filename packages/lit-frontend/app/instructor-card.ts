@@ -106,6 +106,17 @@ export class InstructorCardElement extends LitElement {
         background-color: var(--color-grey);
         padding: 3px 5px;
         border-radius: 5px;
+        border-color: white;
+        cursor: pointer;
+        transition: all 0.3s;
+        border-width: 1px;
+        border: solid;
 }
+
+    .request:hover{
+        background-color: white;
+        color: var(--color-grey);
+        border-color: var(--color-grey);
+    }
   `;
 }

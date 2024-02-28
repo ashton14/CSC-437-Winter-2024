@@ -1,15 +1,16 @@
-import { css, html, LitElement } from "lit";
-import { customElement, property, state } from "lit/decorators.js";
+import { css, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
 import { Profile } from "./models/profile.js";
-import { serverPath } from "./rest.js";
+import * as App from "./app"
 
 @customElement("view-profile")
-export class ViewProfileElement extends LitElement {
-    @property()
-    path: string = "";
+export class ViewProfileElement extends App.View {
+  @property({ attribute: false })
+    using?: Profile;
 
-    @state()
-    profile?: Profile;
+    get profile() {
+      return this.using || ({} as Profile);
+  }
 
     render() {
         return html`
@@ -26,7 +27,7 @@ export class ViewProfileElement extends LitElement {
             `;
     }
 
-  static styles = css`
+  static styles = [css`
     .info-section {
     margin: 20px;
     padding: 20px;
@@ -69,39 +70,7 @@ li {
     padding: 0px 20px;
     border-radius: 50%;
     margin-right: -10px;
-    }`;
-
-
-    _fetchData(path: string) {
-        fetch(serverPath(path))
-            .then((response) => {
-                if (response.status === 200) {
-                    return response.json();
-                }
-                return null;
-            })
-            .then((json: unknown) => {
-                if (json) this.profile = json as Profile;
-            });
-    }
-
-    connectedCallback() {
-        if (this.path) {
-        this._fetchData(this.path);
-        }
-        super.connectedCallback();
-    }
-    
-    attributeChangedCallback(
-        name: string,
-        oldValue: string,
-        newValue: string
-    ) {
-        if (name === "path" && oldValue !== newValue && oldValue) {
-        this._fetchData(newValue);
-        }
-        super.attributeChangedCallback(name, oldValue, newValue);
-    }
+    }`];
 }
 
 @customElement("edit-profile")
@@ -121,11 +90,11 @@ export class UserProfileEditElement extends ViewProfileElement {
           <label for="handicap">Handicap:</label>
           <input type="number" id="handicap" name="handicap" placeholder="New handicap..." >
 
-        <button type="submit">Save</button>
+        <button type="submit" onclick="location.reload()">Save</button>
     </form> `;
   }
 
-  static styles = [ViewProfileElement.styles,
+  static styles = [...ViewProfileElement.styles,
     css`
   .edit-form{
     margin: 20px;
@@ -138,13 +107,31 @@ export class UserProfileEditElement extends ViewProfileElement {
     box-sizing: border-box;
   }
   
+  
   input{
     display: block;
     margin-bottom: 10px;
     margin-top: 3px;
+    border-radius: 4px;
+    border-width: 1px;
+    width: 168px;
   }
   h1{
     margin: 5px 0px;
+  }
+  button{
+    cursor: pointer;
+    background-color: #006633;
+    color: white;
+    border-radius: 2px;
+    border: none;
+    height: 30px;
+    width: 50px;
+    font-size: 15px;
+    transition: all 0.3s;
+  }
+  button:hover{
+    background-color:#05d16b;
   }
   `];
 
@@ -157,33 +144,12 @@ export class UserProfileEditElement extends ViewProfileElement {
       .map(([k, v]) => (v === "" ? [k] : [k, v]));
     const json = Object.fromEntries(entries);
 
-    this._putData(json);
-  }
-
-  _putData(json: Profile) {
-    fetch(serverPath(this.path), {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(json)
-    })
-      .then((response) => {
-        if (response.status === 200) return response.json();
-        else return null;
-      })
-      .then((json: unknown) => {
-        if (json) {
-          this.profile = json as Profile;
-          this.requestUpdate();
-        }
-      })
-      .catch((err) =>
-        console.log("Failed to PUT form data", err)
-      );
+    this.dispatchMessage({
+        type: "ProfileSaved",
+        userid: this.profile?.userid,
+        profile: json as Profile
+      });
   }
 }
 
-// function serverPath(_path: string): string | URL | Request {
-//     console.log(_path);
-//     throw new Error("Function not implemented.");
-// }
 

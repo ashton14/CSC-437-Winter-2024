@@ -10,7 +10,6 @@ import "../components/auth-required";
 import "../components/vaadin-router";
 
 
-
 @customElement("caddycoaches-app")
 export class CaddyCoachesAppElement extends App.Main {
     constructor() { super(update); }

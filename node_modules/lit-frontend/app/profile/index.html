@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <script type="module" src="../drop-down.ts"></script>
+    <script type="module" src="../toggle-switch.ts"></script>
+    <script type="module" src="../../src/user-profile.ts"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Instrument+Serif:ital@1&family=Quicksand&family=Rubik&display=swap"
+        rel="stylesheet" />
+    <title>Caddy Coaches | Home</title>
+</head>
+
+<header class="topbar">
+
+    <span class="header-title">Caddy Coaches</span>
+    <span class="header-buttons">
+        <span class="header-nav-container"><a class="header-nav" href="../index.html">Home</a></span>
+        <span class="header-nav-container"><a class="header-nav" href="../index.html">About</a></span>
+    </span>
+    <nav class="menu-bar">
+        <drop-down>
+            <img class="instructor-pic" src="/images/swing1.jpg" alt="profile picture">
+            <ul class="menu" slot="menu">
+                <li>Sign in</li>
+                <li>Sign out</li>
+                <li>
+                    <hr />
+                </li>
+                <li><a href=".">Edit Profile</a></li>
+                <li>
+                    <toggle-switch>Theme</toggle-switch>
+                </li>
+                <li>
+                    <hr />
+                </li>
+                <li style="color: red;">Delete Account</li>
+            </ul>
+        </drop-down>
+    </nav>
+</header>
+<h1>Profile</h1>
+
+<body>
+    <img class="background-image" src="../../images/golfballs.jpeg" alt="Background Image">
+    <section>
+        <view-profile path="/profile/1"></view-profile>
+        <edit-profile>edit</edit-profile>
+    </section>
+</body>
+
+</html>

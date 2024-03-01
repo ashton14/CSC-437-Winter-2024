@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/tokens.css" />
     <script type="module" src="./drop-down.ts"></script>
     <script type="module" src="./toggle-switch.ts"></script>
+    <script type="module" src="../src/user-profile.ts"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,7 +19,6 @@
 </head>
 
 <header class="topbar">
-
     <span class="header-title">Caddy Coaches</span>
     <span class="header-buttons">
         <span class="header-nav-container"><a class="header-nav" href="index.html">Home</a></span>
@@ -51,16 +51,7 @@
     <img class="background-image" src="../images/golfballs.jpeg" alt="Background Image">
     <ul>
         <li>
-            <section class="info-section"> <!--profile section-->
-                <ul>
-                    <li class="player-name">John Smith
-                        <img class="instructor-pic" src="/images/swing1.jpg" alt="profile picture">
-                    </li>
-                    <li class="personal-info">Email: jsmith@gmail.com</li>
-                    <li class="personal-info">DOB: 7/17/2002</li>
-                    <li class="personal-info">Handicap: 25</li>
-                </ul>
-            </section>
+            <view-profile path="/profile/1"></view-profile>
         </li>
         <li>
             <section>

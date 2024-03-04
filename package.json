@@ -19,9 +19,11 @@
   "bugs": {
     "url": "https://github.com/ashton14/CSC-437-Winter-2024/issues"
   },
-  "homepage": "https://github.com/ashton14/CSC-437-Winter-2024#readme"
-  ,
+  "homepage": "https://github.com/ashton14/CSC-437-Winter-2024#readme",
   "workspaces": [
-        "packages/*"
-    ]
+    "packages/*"
+  ],
+  "dependencies": {
+    "typescript": "^5.3.3"
+  }
 }

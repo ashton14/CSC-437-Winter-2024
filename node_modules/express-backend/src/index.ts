@@ -3,9 +3,13 @@ import cors from "cors";
 import { connect } from "./mongoConnect.js";
 import profiles from "./profiles.js";
 import { Profile } from "../../lit-frontend/src/models/profile.js";
+import path from "path";
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+const indexHtml = require.resolve("lit-frontend");
+const dist = path.dirname(indexHtml);
 
 app.use(cors());
 app.use(express.json());
@@ -36,3 +40,4 @@ app.post("/api/profiles", (req: Request, res: Response) => {
     .then((profile: Profile) => res.status(201).send(profile))
     .catch((err) => res.status(500).send(err));
 });
+

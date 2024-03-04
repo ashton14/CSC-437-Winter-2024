@@ -5,6 +5,7 @@ import profiles from "./profiles.js";
 import { Profile } from "../../lit-frontend/src/models/profile.js";
 import path from "path";
 
+
 const app = express();
 const port = process.env.PORT || 3000;
 

@@ -2,8 +2,21 @@ import express from "express";
 import cors from "cors";
 import { connect } from "./mongoConnect.js";
 import profiles from "./profiles.js";
+import path from "path";
 const app = express();
 const port = process.env.PORT || 3000;
+
+
+try {
+  indexHtml = require.resolve(frontend);
+  dist = path.dirname(indexHtml.toString());
+} catch (error) {
+  console.log(`Could not resolve ${frontend}:`, error.code);
+  dist = path.resolve(cwd, "..", frontend, "dist");
+  indexHtml = path.resolve(dist, "index.html");
+}
+
+
 app.use(cors());
 app.use(express.json());
 connect("caddycoaches");

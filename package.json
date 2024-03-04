@@ -5,7 +5,9 @@
   "main": "app/index.js",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build:frontend": "npm run -w lit-frontend build",
+    "start:backend": "npm -w express-backend run start",
+    "start": "npm run build:frontend && npm run start:backend",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

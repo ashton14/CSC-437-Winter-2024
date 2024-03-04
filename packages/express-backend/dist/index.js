@@ -6,17 +6,9 @@ import path from "path";
 const app = express();
 const port = process.env.PORT || 3000;
 
-let dist;
-let indexHtml;
 
-try {
-  indexHtml = require.resolve(frontend);
-  dist = path.dirname(indexHtml.toString());
-} catch (error) {
-  console.log(`Could not resolve ${frontend}:`, error.code);
-  dist = path.resolve(cwd, "..", frontend, "dist");
-  indexHtml = path.resolve(dist, "index.html");
-}
+const indexHtml = require.resolve("lit-frontend");
+const dist = path.dirname(indexHtml);
 
 
 app.use(cors());

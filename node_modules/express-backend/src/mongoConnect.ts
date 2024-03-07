@@ -7,6 +7,7 @@ dotenv.config();
 function getMongoURI(dbname: string) {
   let connection_string = `mongodb://localhost:27017/${dbname}`;
   const { MONGO_USER, MONGO_PWD, MONGO_CLUSTER } = process.env;
+  console.log("env,", process.env);
 
   if (MONGO_USER && MONGO_PWD && MONGO_CLUSTER) {
     console.log(

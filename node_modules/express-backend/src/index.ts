@@ -14,7 +14,7 @@ const dist = path.dirname(indexHtml);
 
 app.use(cors());
 app.use(express.json());
-connect("caddycoaches");
+connect("CaddyCoaches");
 
 app.get("/hello", (req: Request, res: Response) => {
     res.send("Hello, World");

@@ -32,7 +32,7 @@ const indexHtml = require.resolve("lit-frontend");
 const dist = import_path.default.dirname(indexHtml);
 app.use((0, import_cors.default)());
 app.use(import_express.default.json());
-(0, import_mongoConnect.connect)("caddycoaches");
+(0, import_mongoConnect.connect)("CaddyCoaches");
 app.get("/hello", (req, res) => {
   res.send("Hello, World");
 });
